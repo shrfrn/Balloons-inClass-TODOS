@@ -1,0 +1,28 @@
+.sky {
+    height: 300px;
+    width: 700px;
+    border-radius: 3px;
+}
+
+.balloon {
+    height: 120px;
+    width: 75px;
+    bottom: 0px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.balloon1 {
+    background-color: red;
+    left: 100px;
+}
+
+.balloon2 {
+    background-color: royalblue;
+    left: 200px;
+}
+
+.balloon3 {
+    background-color: yellow;
+    left: 300px;
+}
