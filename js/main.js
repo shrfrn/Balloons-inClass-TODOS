@@ -1,9 +1,11 @@
 'use strict'
 
-// TODO: render the balloons + onload="init()"  
-// TODO: onmouseover="speedUp
+// TODO: render the balloons + onload='init()'  
+// TODO: onmouseover='speedUp
 // TODO: createBalloons(count) , createBalloon()
-// TODO: remove balloon1, balloon2 classes - move into inline style="bgcolor, left"
+// TODO: remove balloon1, balloon2 classes - move into inline style='bgcolor, left'
+
+var gInterval 
 
 //model:
 var gBalloons = [
@@ -11,20 +13,21 @@ var gBalloons = [
     { id: 2, speed: 15, bottom: 0 },
     { id: 3, speed: 15, bottom: 0 }
 ]
-var gInterval 
 
-function start() {
+function onStart() {
+    if(gInterval) clearInterval(gInterval)
+
     gInterval = setInterval(moveBalloons, 1000)
 }
 
 function moveBalloons() {
-    var elBalloons = document.querySelectorAll('.balloon')
+    const elBalloons = document.querySelectorAll('.balloon')
 
     for (var i = 0; i < gBalloons.length; i++) {
         // model
-        var balloon = gBalloons[i]
+        const balloon = gBalloons[i]
         // dom
-        var elBalloon = elBalloons[i]
+        const elBalloon = elBalloons[i]
 
         // update the model
         balloon.bottom += balloon.speed
@@ -33,14 +36,14 @@ function moveBalloons() {
     }
 }
 
-function blowingUp(elBalloon) {
+function onBlowUp(elBalloon) {
     elBalloon.style.display = 'none'
     playSound()
 }
 
 function playSound() {
-    var sound = new Audio("sound/pop.mp3")
-    sound.play()
+    const audioPop = new Audio('sound/pop.mp3')
+    audioPop.play()
 }
 
 // Utility Functions
@@ -52,8 +55,9 @@ function getRandomInt(min, max) {
 }
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF'
+    const letters = '0123456789ABCDEF'
     var color = '#'
+
     for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)]
     }
