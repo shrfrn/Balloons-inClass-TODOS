@@ -1,7 +1,7 @@
 'use strict'
 
 // TODO: render the balloons + onload='init()'  
-// TODO: onmouseover='speedUp
+// TODO: onmouseover='speedUp()'
 // TODO: createBalloons(count) , createBalloon()
 // TODO: remove balloon1, balloon2 classes - move into inline style='bgcolor, left'
 
